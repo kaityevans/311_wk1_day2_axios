@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon -x npm run test",
+    "dev": "node src/index.js",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.6.0",
     "jest": "^24.8.0",
     "nodemon": "^1.19.1"
   }
