@@ -22,17 +22,27 @@ discoverMovie()
 const getMovieById = (id) => {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`
   // code here
-  return axios(url).then(res => console.log(res.data.title))
-  return res.data
+  let results = axios(url).then((res) => {
+    console.log(res.data.original_title)
+    return res.data
+  })
+  return results
 }
 getMovieById(500)
-
+// /*  */
 const getMovieByIdFailure = () => {
-  const fakeId = 1 // FAKE ID HERE
+  const fakeId = 5783 // FAKE ID HERE
   const url = `https://api.themoviedb.org/3/movie/${fakeId}?api_key=${api_key}`
-  // code here
+  // code here/*  */
+  let results = axios(url)
+    .then((res) => console.log(res))
+    .catch((err) => {
+      console.log(err.response.status)
+      return err.response.status
+    })
+  return results
 }
-
+getMovieByIdFailure()
 
 
 module.exports = {
